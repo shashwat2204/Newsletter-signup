@@ -1,0 +1,311 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Theme Variables */
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --nav-background-color: #007BFF;
+    --nav-text-color: #fff;
+    --input-background-color: #fff;
+    --input-border-color: #ccc;
+    --button-background-color: #007BFF;
+    --button-text-color: #fff;
+}
+
+body.dark-mode {
+    --background-color: #020219;
+    --text-color: #eaeaea;
+    --nav-background-color: #0f3460;
+    --nav-text-color: #eaeaea;
+    --input-background-color: #030814;
+    --input-border-color: #20589d;
+    --button-background-color: #3a3a76;
+    --button-text-color: #fff;
+}
+
+/* Upper Navigation */
+.upper-nav {
+    padding: 10px;
+    font-size: 18px;
+    height: 8vh;
+    background-color: var(--nav-background-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--nav-text-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+.upper-nav .brand-name {
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.table-nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    list-style: none;
+    gap: 2vw;
+}
+
+.table-nav li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.table-nav li:hover {
+    color: #FFD700;
+}
+
+/* Side Navigation */
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: var(--nav-background-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--nav-text-color);
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    color: #FFD700;
+}
+
+.side-nav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+/* Container */
+.container {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+h1 {
+    font-size: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInDown 1s ease-out forwards;
+}
+
+/* Benefits Section */
+.benefits {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 2.5s ease-out forwards;
+}
+
+.benefits h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.benefits ul {
+    list-style: none;
+    padding: 0;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.benefits li {
+    font-size: 16px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.benefits li:hover {
+    transform: translateX(10px);
+    color: var(--button-background-color);
+}
+
+/* Signup Form */
+.signup-form {
+    background: var(--input-background-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.signup-form h2 {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.signup-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    background: var(--input-background-color);
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.signup-form input:focus {
+    border-color: var(--button-background-color);
+    outline: none;
+}
+
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.signup-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.signup-form button:active {
+    transform: scale(0.98);
+}
+
+.privacy {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 3s ease-out forwards;
+}
+
+footer a {
+    color: var(--button-background-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
