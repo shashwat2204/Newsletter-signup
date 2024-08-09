@@ -17,7 +17,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
             alert('Thank you for signing up!');
             window.location.href = '/home';  // Redirect to home page
         } else {
-            alert('There was an error. Please try again.');
+            alert('this email is already registered.');
         }
     })
     .catch((error) => {

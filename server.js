@@ -45,10 +45,16 @@ app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'home.html'));
 });
 
-// Serve the index page (signup form page)
+
 app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'landing-page.html'));
+});
+
+// Serve the index page (signup form page)
+app.get('/subscribe', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

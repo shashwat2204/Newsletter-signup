@@ -11,9 +11,10 @@ body {
 
 /* Theme Variables */
 :root {
+    --bgcolor-container: white;
     --background-color: #f9f9f9;
     --text-color: #333;
-    --nav-background-color: #007BFF;
+    --nav-background-color: #31a1fd;
     --nav-text-color: #fff;
     --input-background-color: #fff;
     --input-border-color: #ccc;
@@ -22,13 +23,14 @@ body {
 }
 
 body.dark-mode {
+    --bgcolor-container: black;
     --background-color: #020219;
     --text-color: #eaeaea;
     --nav-background-color: #0f3460;
     --nav-text-color: #eaeaea;
     --input-background-color: #030814;
     --input-border-color: #20589d;
-    --button-background-color: #3a3a76;
+    --button-background-color: #1e1e5d;
     --button-text-color: #fff;
 }
 
@@ -73,6 +75,8 @@ body.dark-mode {
 
 /* Side Navigation */
 .side-nav {
+    border-top: 1px solid white;
+    margin-top: 8vh;
     height: 100%;
     width: 0;
     position: fixed;
@@ -108,31 +112,58 @@ body.dark-mode {
 }
 
 /* Container */
-.container {
-    background-color: var(--background-color);
+.containers {
+    background-color: var(--bgcolor-container);
     color: var(--text-color);
-    max-width: 600px;
+    height: 100vh;
     margin: 0 auto;
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items:center;
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+.box-cont{
+    box-shadow: 6px 6px 10px 4px #6a8c8b;
+    border: 1px solid blue;
+    max-width: 35vw;
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.box-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: aquamarine; */
+    padding: 0;
+    border: 0;
+    max-width: 80vw;
+    height: 80vh;
+}
+
 /* Header */
 header {
+    /* background-color: #0056b3; */
     text-align: center;
     margin-bottom: 20px;
-    width: 100%;
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: start;
+    margin-top: 10vh;
+    gap: 12vw;
     animation: fadeIn 2s ease-out forwards;
 }
 
 h1 {
-    font-size: 24px;
+    /* background-color: #1e1e5d; */
+    font-size: 24px; 
     opacity: 0;
     transform: translateY(20px);
     animation: slideInDown 1s ease-out forwards;
@@ -140,8 +171,9 @@ h1 {
 
 /* Benefits Section */
 .benefits {
+    /* background-color: #030814; */
     margin-bottom: 20px;
-    width: 100%;
+    max-width: 35vw;
     text-align: center;
     animation: fadeIn 2.5s ease-out forwards;
 }
@@ -174,6 +206,7 @@ h1 {
 
 /* Signup Form */
 .signup-form {
+    border: 1px solid rgba(0, 0, 255, 0.284);
     background: var(--input-background-color);
     padding: 20px;
     border-radius: 5px;
@@ -228,6 +261,7 @@ h1 {
 }
 
 .privacy {
+    /* color:var(--text-color); */
     font-size: 12px;
     color: #888;
     text-align: center;
@@ -245,7 +279,7 @@ footer {
 }
 
 footer a {
-    color: var(--button-background-color);
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
